@@ -1,19 +1,30 @@
-// index.js
-const message = "NodeJS in amazing!";
-console.log(message);
+// // index.js
+// const message = "NodeJS in amazing!";
+// console.log(message);
 
-const validator = require("validator");
+// const validator = require("validator");
 
-const validateEmail = email => {
-  return validator.isEmail(email);
+// const validateEmail = email => {
+//   return validator.isEmail(email);
+// };
+
+// console.log(
+//   "Is mango@mail.com a valid email?: ",
+//   validateEmail("mango@mail.com")
+// );
+
+// console.log(
+//   "Is Mangozedog.com a valid email?: ",
+//   validateEmail("Mangozedog.com")
+// );
+const settings = {
+  theme: "dark",
+  isAuthenticated: true,
+  options: [1, 2, 3],
 };
 
-console.log(
-  "Is mango@mail.com a valid email?: ",
-  validateEmail("mango@mail.com")
-);
+localStorage.setItem("settings", JSON.stringify(settings));
 
-console.log(
-  "Is Mangozedog.com a valid email?: ",
-  validateEmail("Mangozedog.com")
-);
+const savedSettings = localStorage.getItem("settings");
+const parsedSettings = JSON.parse(savedSettings);
+console.log(parsedSettings);
